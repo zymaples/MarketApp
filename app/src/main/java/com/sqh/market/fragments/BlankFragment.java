@@ -7,33 +7,47 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
-import android.os.*;
+import android.os.Bundle;
+import android.os.Environment;
+import android.os.Handler;
+import android.os.Message;
 import android.provider.MediaStore;
 import android.support.v4.app.Fragment;
-import android.support.v4.content.FileProvider;
 import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Base64;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.*;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.Spinner;
+import android.widget.Toast;
+
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.sqh.market.R;
-import com.sqh.market.activity.DetailsActivity;
-import com.sqh.market.adapter.SameLinkGridApter;
 import com.sqh.market.constant.Constants;
 import com.sqh.market.constant.MyConstant;
 import com.sqh.market.utils.LoginCheckUtil;
 import com.sqh.market.utils.NetUtil;
-import okhttp3.*;
-import pub.devrel.easypermissions.AppSettingsDialog;
-import pub.devrel.easypermissions.EasyPermissions;
 
-import java.io.*;
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.lang.reflect.Array;
 import java.util.List;
+
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.FormBody;
+import okhttp3.RequestBody;
+import okhttp3.Response;
+import pub.devrel.easypermissions.AppSettingsDialog;
+import pub.devrel.easypermissions.EasyPermissions;
 
 import static android.app.Activity.RESULT_OK;
 
@@ -237,11 +251,12 @@ public class BlankFragment extends Fragment implements EasyPermissions.Permissio
         //跳转到调用系统相机
         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         //判断版本 如果在Android7.0以上,使用FileProvider获取Uri
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-            intent.setFlags(Intent.FLAG_GRANT_WRITE_URI_PERMISSION);
-            Uri contentUri = FileProvider.getUriForFile(mContext, "com.sqh.market.fragments", captureFile);
-            intent.putExtra(MediaStore.EXTRA_OUTPUT, contentUri);
-        } else {
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+//            intent.setFlags(Intent.FLAG_GRANT_WRITE_URI_PERMISSION);
+//            Uri contentUri = FileProvider.getUriForFile(mContext, "com.sqh.market.fragments", captureFile);
+//            intent.putExtra(MediaStore.EXTRA_OUTPUT, contentUri);
+//        } else
+     {
             //否则使用Uri.fromFile(file)方法获取Uri
             intent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(captureFile));
         }
@@ -309,10 +324,7 @@ public class BlankFragment extends Fragment implements EasyPermissions.Permissio
         if (resultCode == RESULT_OK) {
             switch (requestCode) {
                 case REQUEST_PERMISSION_CAMERA:
-                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-                        Uri contentUri = FileProvider.getUriForFile(mContext, "com.sqh.market.fragments", captureFile);
-                        cropPhoto(contentUri);
-                    } else {
+                    {
                         cropPhoto(Uri.fromFile(captureFile));
                     }
                     break;

@@ -3,7 +3,7 @@
                 xmlns:app="http://schemas.android.com/apk/res-auto"
                 xmlns:tools="http://schemas.android.com/tools"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 tools:context=".MainActivity">
     <RelativeLayout
             android:id="@+id/title"
@@ -12,7 +12,7 @@
         <TextView
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:background="#B4EEB4"
+                android:background="@color/titlebarColor"
                 android:gravity="center_horizontal"
                 android:text="发布"
                 android:textSize="20dp" />
@@ -23,7 +23,7 @@
             android:layout_below="@id/title">
         <EditText
                 android:layout_width="match_parent"
-                android:layout_height="130dp"
+                android:layout_height="100dp"
                 android:layout_margin="20dp"
                 android:hint="请输入商品描述"
                 android:gravity="center_horizontal"
@@ -54,14 +54,11 @@
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="点击上传商品图片"
+                android:text="点击上传图片"
                 android:layout_below="@id/imageUp"
                 android:layout_centerHorizontal="true"
                 android:id="@+id/dianjishangchuantup"/>
-        <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_below="@id/dianjishangchuantup">
+        <!--连接点-->
 
             <EditText
                     android:id="@+id/value"
@@ -71,6 +68,7 @@
                     android:layout_marginLeft="1dp"
                     android:layout_marginTop="10dp"
                     android:layout_marginRight="1dp"
+                    android:layout_below="@+id/dianjishangchuantup"
                     android:background="@drawable/rounded_text"
                     android:hint="请输入商品名称"
                     android:inputType="text"
@@ -159,7 +157,7 @@
                         android:id="@+id/submit"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@color/DarkSeaGreen"
+                        android:background="@color/titlebarColor"
                         android:layout_marginTop="5dp"
                         android:gravity="center"
                         android:text="发布"
@@ -175,7 +173,7 @@
 
 
 
-</RelativeLayout>
+
         <!--<ImageView-->
         <!--android:layout_centerInParent="true"-->
         <!--android:id="@+id/iv_avatar"-->
