@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: com.lidroid.xutils:xutils-2.6.13">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/88d2a2471f9d2a12f2aa2903cf5d13a1/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/88d2a2471f9d2a12f2aa2903cf5d13a1/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.lidroid.xutils/xutils/2.6.13/79fde10aa720b8230bed9961d257dd5d7fb39890/xutils-2.6.13-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

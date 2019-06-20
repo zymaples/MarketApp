@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="sort">
+        <item>餐饮类</item>
+        <item>生活服务类</item>
+        <item>生活用品类</item>
+        <item>服饰类</item>
+        <item>电子产品类</item>
+    </string-array>
+</resources>

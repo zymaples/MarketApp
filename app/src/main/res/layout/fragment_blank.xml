@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:context=".MainActivity">
+    <RelativeLayout
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="#B4EEB4"
+                android:gravity="center_horizontal"
+                android:text="发布"
+                android:textSize="20dp" />
+    </RelativeLayout>
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/title">
+        <EditText
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                android:layout_margin="20dp"
+                android:hint="请输入商品描述"
+                android:gravity="center_horizontal"
+                android:id="@+id/InfoDes"
+                android:background="@color/grays" />
+
+
+        <ImageView
+                android:id="@+id/imageUp"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_below="@id/InfoDes"
+                android:layout_marginTop="0dp"
+                android:src="@drawable/imageup"
+                android:layout_centerHorizontal="true"
+                />
+
+        <ImageView
+                android:id="@+id/iv_avatar"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_below="@id/InfoDes"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="0dp"
+                android:layout_marginRight="11dp"
+                android:layout_toLeftOf="@+id/imageUp" />
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="点击上传商品图片"
+                android:layout_below="@id/imageUp"
+                android:layout_centerHorizontal="true"
+                android:id="@+id/dianjishangchuantup"/>
+        <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_below="@id/dianjishangchuantup">
+
+            <EditText
+                    android:id="@+id/value"
+                    android:layout_width="fill_parent"
+                    android:layout_height="38dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="1dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="1dp"
+                    android:background="@drawable/rounded_text"
+                    android:hint="请输入商品名称"
+                    android:inputType="text"
+                    android:paddingLeft="5dp"
+                    android:paddingTop="5dp"
+                    android:paddingRight="5dp"
+                    android:paddingBottom="10dp"
+                    android:textSize="20sp" />
+
+
+            <EditText
+                    android:id="@+id/value2"
+                    android:layout_width="fill_parent"
+                    android:layout_height="38dp"
+                    android:layout_below="@id/value"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="1dp"
+                    android:layout_marginTop="14dp"
+                    android:layout_marginRight="1dp"
+                    android:background="@drawable/rounded_text"
+                    android:hint="请输入价格"
+                    android:inputType="text"
+                    android:paddingLeft="5dp"
+                    android:paddingTop="5dp"
+                    android:paddingRight="5dp"
+                    android:paddingBottom="5dp"
+                    android:textSize="20sp" />
+
+            <TextView android:id="@+id/spinnerText"
+                      android:layout_width="fill_parent"
+                      android:layout_height="wrap_content"
+                      android:layout_marginTop="15dp"
+                      android:layout_marginLeft="2dp"
+                      android:layout_marginRight="2dp"
+                      android:layout_centerHorizontal="true"
+                      android:layout_below="@+id/value2"/>
+            <!--android:text="请选择发布类型"-->
+
+
+            <Spinner
+                    android:id="@+id/Spinner01"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/value2"
+                    android:layout_marginTop="14dp" />
+            <EditText
+                    android:id="@+id/value3"
+                    android:layout_width="fill_parent"
+                    android:layout_height="38dp"
+                    android:layout_below="@id/Spinner01"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="1dp"
+                    android:layout_marginTop="14dp"
+                    android:layout_marginRight="1dp"
+                    android:background="@drawable/rounded_text"
+                    android:hint="请输入商品总量"
+                    android:inputType="text"
+                    android:paddingLeft="5dp"
+                    android:paddingTop="5dp"
+                    android:paddingRight="5dp"
+                    android:paddingBottom="5dp"
+                    android:textSize="20sp" />
+            <EditText
+                    android:id="@+id/value4"
+                    android:layout_width="fill_parent"
+                    android:layout_height="38dp"
+                    android:layout_below="@id/value3"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="1dp"
+                    android:layout_marginTop="14dp"
+                    android:layout_marginRight="1dp"
+                    android:background="@drawable/rounded_text"
+                    android:hint="请输入您的手机号"
+                    android:inputType="text"
+                    android:paddingLeft="5dp"
+                    android:paddingTop="5dp"
+                    android:paddingRight="5dp"
+                    android:paddingBottom="5dp"
+                    android:textSize="20sp" />
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/value4">
+
+                <Button
+                        android:id="@+id/submit"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/DarkSeaGreen"
+                        android:layout_marginTop="5dp"
+                        android:gravity="center"
+                        android:text="发布"
+                        android:textColor="@color/white"
+                        android:textSize="20dp" />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+
+
+
+</RelativeLayout>
+        <!--<ImageView-->
+        <!--android:layout_centerInParent="true"-->
+        <!--android:id="@+id/iv_avatar"-->
+        <!--android:layout_width="200dp"-->
+        <!--android:layout_height="200dp" />-->
+
+        <!--<Button-->
+        <!--android:onClick="btnClick"-->
+        <!--android:text="拍照或从相册选择"-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content" />-->
